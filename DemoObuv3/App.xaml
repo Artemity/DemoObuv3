@@ -1,0 +1,9 @@
+﻿<Application x:Class="DemoObuv3.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:DemoObuv3"
+             StartupUri="LoginWindow.xaml">
+    <Application.Resources>
+         
+    </Application.Resources>
+</Application>
