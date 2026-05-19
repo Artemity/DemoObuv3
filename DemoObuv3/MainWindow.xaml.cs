@@ -27,19 +27,12 @@ namespace DemoObuv3
         {
             InitializeComponent();
             _currentUser = user;
-            mainWindow.Title = "ООО 'Обувь'" + " " + _currentUser.Role;
+            mainWindow.Title = "ООО Обувь" + " " + "-" + " " + _currentUser.Role;
 
             ConfigureRole();
             LoadDB();
         }
 
-        private void btnExit_Click(object sender, RoutedEventArgs e)
-        {
-            LoginWindow login = new LoginWindow();
-            login.Show();
-            this.Close();
-        }
-        
         void LoadDB()
         {
             var products = _db.Products.ToList();
@@ -91,6 +84,13 @@ namespace DemoObuv3
             tbUser.Text = $"{_currentUser.Surname} {_currentUser.Name} {_currentUser.Patronymic}";
         }
 
+        private void btnChange_Click(object sender, RoutedEventArgs e)
+        {
+            LoginWindow login = new LoginWindow();
+            login.Show();
+            this.Close();
+        }
+
         private void mAdd_Click(object sender, RoutedEventArgs e)
         {
             AddEditWindow addEdit = new AddEditWindow();
@@ -102,8 +102,12 @@ namespace DemoObuv3
         {
             Product product = lvProducts.SelectedItem as Product;
 
-            if (product == null) return;
-
+            if (product == null)
+            {
+                MessageBox.Show("Выберите запись для редактирования !", "Ошибка");
+                return;
+            }
+           
             AddEditWindow addEdit = new AddEditWindow(product);
             addEdit.ShowDialog();
             LoadDB();
@@ -127,9 +131,16 @@ namespace DemoObuv3
             LoadDB();
         }
 
+        private void btnExit_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
         private void tbSearch_TextChanged(object sender, TextChangedEventArgs e)
         {
             LoadDB();
         }
+
+        
     }
 }

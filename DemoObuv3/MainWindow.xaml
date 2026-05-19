@@ -14,10 +14,11 @@
         </Grid.RowDefinitions>
 
         <Menu Grid.Row="0">
-            <MenuItem Header="Выйти" Click="btnExit_Click"/>
+            <MenuItem Header="См.уч.запись" Click="btnChange_Click"/>
             <MenuItem Header="Добавить" x:Name="mAdd" Click="mAdd_Click"/>
             <MenuItem Header="Редактировать" x:Name="mEdit" Click="mEdit_Click"/>
             <MenuItem Header="Удалить" x:Name="mDel" Click="mDel_Click"/>
+            <MenuItem Header="Выход" Click="btnExit_Click"/>
             <Separator/>
         </Menu>
 

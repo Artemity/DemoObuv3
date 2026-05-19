@@ -61,5 +61,10 @@ namespace DemoObuv3
             main.Show();
             this.Close();
         }
+
+        private void btnExit_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
     }
 }
